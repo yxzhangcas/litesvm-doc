@@ -1,0 +1,26 @@
+########## Program ##########
+
+yxzhang@SolanaLearn:litesvm-doc$ mkdir p02-test-your-program
+yxzhang@SolanaLearn:litesvm-doc$ cd p02-test-your-program/
+yxzhang@SolanaLearn:p02-test-your-program$ anchor init --no-install --no-git sample
+yxzhang@SolanaLearn:p02-test-your-program$ cd sample/
+# 将lib.rs替换为https://github.com/yxzhangcas/solana-bootcamp-2026/blob/main/03-voting/anchor/programs/voting/src/lib.rs
+# 删除所有无关内容和依赖，只保留构建so文件的最小单元
+# 修改Cargo.toml的anchor依赖：anchor-lang = { version = "1.0.2", features = ["init-if-needed"] }，删除所有dev依赖
+yxzhang@SolanaLearn:sample$ rm -rf app/ migrations/ package.json tsconfig.json .gitignore .prettierignore 
+yxzhang@SolanaLearn:sample$ cd programs/sample/
+yxzhang@SolanaLearn:sample$ rm -rf tests/ src/instructions* src/constants.rs src/error.rs src/state.rs
+yxzhang@SolanaLearn:sample$ cd -
+yxzhang@SolanaLearn:sample$ anchor keys sync
+yxzhang@SolanaLearn:sample$ anchor build
+# 构建完成得到idl和so
+
+########## Test ###########
+
+yxzhang@SolanaLearn:sample$ cargo add --dev litesvm solana-sdk
+yxzhang@SolanaLearn:sample$ mkdir programs/sample/tests
+yxzhang@SolanaLearn:sample$ touch programs/sample/tests/program_test.rs
+# 拷贝文档内容到rs文件，并根据项目情况进行适配
+yxzhang@SolanaLearn:sample$ cargo add --dev solana-transaction # 版本号降为3.1.0
+yxzhang@SolanaLearn:sample$ anchor test
+yxzhang@SolanaLearn:sample$ cargo test test_program -- --show-output
