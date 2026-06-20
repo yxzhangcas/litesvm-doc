@@ -1,0 +1,10 @@
+[package]
+name = "p01-getting-started"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[dev-dependencies]
+litesvm = "0.13.0"
+solana-sdk = "4.0.1"
