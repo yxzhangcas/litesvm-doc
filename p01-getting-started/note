@@ -1,0 +1,23 @@
+yxzhang@SolanaLearn:litesvm-doc$ cargo new p01-getting-started
+yxzhang@SolanaLearn:litesvm-doc$ cd p01-getting-started/
+yxzhang@SolanaLearn:p01-getting-started$ cargo add --dev litesvm
+yxzhang@SolanaLearn:p01-getting-started$ cargo add --dev solana-sdk
+yxzhang@SolanaLearn:p01-getting-started$ mkdir tests
+########### test sample 1 ###########
+yxzhang@SolanaLearn:p01-getting-started$ touch tests/create_account.rs
+# 拷贝文档代码
+yxzhang@SolanaLearn:p01-getting-started$ cargo test create_account -- --show-output
+########### test sample 2 ###########
+yxzhang@SolanaLearn:p01-getting-started$ touch tests/transfer_test.rs
+# 拷贝文档代码
+yxzhang@SolanaLearn:p01-getting-started$ cargo test test_transfer -- --show-output  # 指定的是测试方法名，而不是文件名
+# 报错
+# 修复1：https://github.com/anza-xyz/solana-sdk?tab=readme-ov-file#upgrading-from-v2-to-v3
+# system_instruction -> solana_system_interface::instruction
+yxzhang@SolanaLearn:p01-getting-started$ cargo add --dev solana-system-interface # 存在依赖冲突，从最新的3.2.0降级为3.1.0
+# 修复2: transaction -> solana_transaction
+yxzhang@SolanaLearn:p01-getting-started$ cargo add --dev solana-transaction # 存在依赖冲突，从最新的4.1.3降级为3.1.0
+yxzhang@SolanaLearn:p01-getting-started$ cargo test test_transfer -- --show-output
+########### test all ###########
+yxzhang@SolanaLearn:p01-getting-started$ cargo test -- --show-output
+yxzhang@SolanaLearn:p01-getting-started$ touch README.md # 将此文档内容上传git

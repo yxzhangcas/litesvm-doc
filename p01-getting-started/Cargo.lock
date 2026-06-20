@@ -1631,6 +1631,8 @@ version = "0.1.0"
 dependencies = [
  "litesvm",
  "solana-sdk",
+ "solana-system-interface 3.1.0",
+ "solana-transaction 3.1.0",
 ]
 
 [[package]]
