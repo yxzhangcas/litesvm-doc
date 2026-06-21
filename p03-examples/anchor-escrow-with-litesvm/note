@@ -1,0 +1,9 @@
+yxzhang@SolanaLearn:p03-examples$ git clone https://github.com/brimigs/anchor-escrow-with-litesvm.git
+yxzhang@SolanaLearn:p03-examples$ cd anchor-escrow-with-litesvm/
+yxzhang@SolanaLearn:anchor-escrow-with-litesvm$ rm -rf .git*
+yxzhang@SolanaLearn:anchor-escrow-with-litesvm$ anchor keys sync
+yxzhang@SolanaLearn:anchor-escrow-with-litesvm$ avm use 1.0.0
+yxzhang@SolanaLearn:anchor-escrow-with-litesvm$ anchor build
+yxzhang@SolanaLearn:anchor-escrow-with-litesvm$ cp target/idl/anchor_escrow.json idls/    # 使用了anchor-litesvm
+yxzhang@SolanaLearn:anchor-escrow-with-litesvm$ cargo test
+yxzhang@SolanaLearn:anchor-escrow-with-litesvm$ touch note
