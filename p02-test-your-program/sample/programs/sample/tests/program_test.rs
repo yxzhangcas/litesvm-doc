@@ -1,13 +1,14 @@
 use anchor_lang::system_program;
 use litesvm::LiteSVM;
 use solana_sdk::{
+    borsh1::try_from_slice_unchecked,
     instruction::{AccountMeta, Instruction},
     pubkey::Pubkey,
     signature::{Keypair, Signer},
 };
 use solana_transaction::Transaction;
 
-use sample;
+use sample::{self, PollAccount};
 
 #[test]
 fn test_program() {
@@ -28,8 +29,8 @@ fn test_program() {
     let poll_id: u64 = 10086;
     let start_time: u64 = 0;
     let end_time: u64 = 1000_000;
-    let name = b"poll 10086";
-    let description = b"poll 10086 description";
+    let name = b"poll_10086";
+    let description = b"poll_10086_description";
 
     let mut data: Vec<u8> = Vec::new();
     data.extend_from_slice(&discriminator);
@@ -71,4 +72,15 @@ fn test_program() {
 
     println!("Program executed successfully!");
 
+    let data = &svm.get_account(&poll_account).unwrap().data[8..];
+    let account_data: PollAccount = try_from_slice_unchecked(&data).unwrap();
+
+    println!(
+        "{} {} {} {} {}",
+        account_data.poll_name,
+        account_data.poll_description,
+        account_data.poll_option_index,
+        account_data.poll_voting_start,
+        account_data.poll_voting_end
+    );
 }
