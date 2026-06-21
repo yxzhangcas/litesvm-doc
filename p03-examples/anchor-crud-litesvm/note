@@ -1,0 +1,8 @@
+yxzhang@SolanaLearn:p03-examples$ git clone https://github.com/brimigs/anchor-crud-litesvm.git
+yxzhang@SolanaLearn:p03-examples$ cd anchor-crud-litesvm/
+yxzhang@SolanaLearn:anchor-crud-litesvm$ rm -rf .git* .prettierignore 
+yxzhang@SolanaLearn:anchor-crud-litesvm$ anchor keys sync
+yxzhang@SolanaLearn:anchor-crud-litesvm$ avm use 0.31.1
+yxzhang@SolanaLearn:anchor-crud-litesvm$ anchor build
+yxzhang@SolanaLearn:anchor-crud-litesvm$ cargo test
+yxzhang@SolanaLearn:anchor-crud-litesvm$ touch note
