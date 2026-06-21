@@ -24,3 +24,12 @@ yxzhang@SolanaLearn:sample$ touch programs/sample/tests/program_test.rs
 yxzhang@SolanaLearn:sample$ cargo add --dev solana-transaction # 版本号降为3.1.0
 yxzhang@SolanaLearn:sample$ anchor test
 yxzhang@SolanaLearn:sample$ cargo test test_program -- --show-output
+
+########### Deploy ###########
+
+yxzhang@SolanaLearn:sample$ touch programs/sample/tests/deploy_from_bytes.rs
+yxzhang@SolanaLearn:sample$ cargo test test_deploy_from_bytes -- --show-output
+yxzhang@SolanaLearn:sample$ touch programs/sample/tests/deploy_from_file.rs
+yxzhang@SolanaLearn:sample$ cargo test test_deploy_from_file -- --show-output
+yxzhang@SolanaLearn:sample$ solana program dump <program_address> <file_name>.so --url <rpc_url>
+Wrote program to pyth.so
