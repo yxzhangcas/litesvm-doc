@@ -1,0 +1,14 @@
+yxzhang@SolanaLearn:litesvm-doc$ mkdir p06-litesvm-loader
+yxzhang@SolanaLearn:litesvm-doc$ cd p06-litesvm-loader/
+yxzhang@SolanaLearn:p06-litesvm-loader$ cargo new loader-example --lib
+yxzhang@SolanaLearn:p06-litesvm-loader$ cd loader-example/
+yxzhang@SolanaLearn:loader-example$ cargo add --dev litesvm litesvm-loader solana-keypair solana-signer@3.0.0
+yxzhang@SolanaLearn:loader-example$ cargo add --dev solana-instruction@3.1.0 solana-message@3.1.0 solana-transaction@3.1.0
+# 修改Cargo.toml，添加[lib]; 修改lib.rs，参考：https://solana.com/zh/docs/programs/rust/program-structure
+yxzhang@SolanaLearn:loader-example$ cargo add solana-program
+yxzhang@SolanaLearn:loader-example$ cargo build-sbf
+yxzhang@SolanaLearn:loader-example$ mkdir tests
+yxzhang@SolanaLearn:loader-example$ touch tests/test_upgradeable_deployment.rs # 拷贝代码
+yxzhang@SolanaLearn:loader-example$ cargo test test_upgradeable_deployment -- --show-output
+yxzhang@SolanaLearn:loader-example$ cd ..
+yxzhang@SolanaLearn:p06-litesvm-loader$ touch note
