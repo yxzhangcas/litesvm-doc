@@ -1,0 +1,27 @@
+yxzhang@SolanaLearn:litesvm-doc$ mkdir p03-examples
+yxzhang@SolanaLearn:litesvm-doc$ cd p03-examples/
+##### Cargo Example #####
+yxzhang@SolanaLearn:p03-examples$ cargo new cargo-example
+yxzhang@SolanaLearn:p03-examples$ cd cargo-example/
+yxzhang@SolanaLearn:cargo-example$ cargo add --dev litesvm solana-sdk solana-system-interface@3.1.0 solana-transaction@3.1.0
+yxzhang@SolanaLearn:cargo-example$ mkdir tests
+yxzhang@SolanaLearn:cargo-example$ touch tests/transfer_test.rs # 拷贝代码
+# system_instruction -> solana_system_interface::instruction
+# transaction -> solana_transaction
+yxzhang@SolanaLearn:cargo-example$ cargo test test_sol_transfer -- --show-output
+yxzhang@SolanaLearn:cargo-example$ touch tests/program_test.rs # 拷贝代码
+# 由于没有对应的so文件，无法加载，也无法调用对应的合约方法，跳过测试。（本身此功能在p02中已经实现，不再重复）
+yxzhang@SolanaLearn:cargo-example$ touch tests/pda_test.rs # 拷贝代码
+yxzhang@SolanaLearn:cargo-example$ cargo add --dev solana-account@3.1.0
+yxzhang@SolanaLearn:cargo-example$ cargo test test_pda_creation -- --show-output
+yxzhang@SolanaLearn:cargo-example$ touch tests/error_test.rs # 拷贝代码
+yxzhang@SolanaLearn:cargo-example$ cargo add --dev solana_transaction_error@3.1.0
+yxzhang@SolanaLearn:cargo-example$ cargo test test_insufficient_funds_error -- --show-output
+yxzhang@SolanaLearn:cargo-example$ touch tests/spl_token_test.rs # 拷贝代码
+yxzhang@SolanaLearn:cargo-example$ cargo add --dev litesvm-token spl-token
+yxzhang@SolanaLearn:cargo-example$ cargo test test_token_transfer -- --show-output
+yxzhang@SolanaLearn:cargo-example$ touch tests/cpi_test.rs # 拷贝代码
+# system_program -> solana_system_interface::program （无so文件，无法执行验证）
+yxzhang@SolanaLearn:cargo-example$ touch tests/time_test.rs  # 拷贝代码
+yxzhang@SolanaLearn:cargo-example$ cargo test test_time_locked_feature -- --show-output
+yxzhang@SolanaLearn:cargo-example$ touch note
