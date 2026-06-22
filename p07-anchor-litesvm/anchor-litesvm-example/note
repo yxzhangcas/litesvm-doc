@@ -1,0 +1,17 @@
+yxzhang@SolanaLearn:litesvm-doc$ mkdir p07-anchor-litesvm
+yxzhang@SolanaLearn:litesvm-doc$ cd p07-anchor-litesvm/
+yxzhang@SolanaLearn:p07-anchor-litesvm$ avm use 1.0.0
+yxzhang@SolanaLearn:p07-anchor-litesvm$ anchor init --no-install --no-git anchor-litesvm-example
+yxzhang@SolanaLearn:p07-anchor-litesvm$ cd anchor-litesvm-example/
+yxzhang@SolanaLearn:anchor-litesvm-example$ cargo add --dev anchor-litesvm litesvm litesvm-utils
+yxzhang@SolanaLearn:anchor-litesvm-example$ rm -rf app/ migrations/ .gitignore .prettierignore package.json tsconfig.json 
+yxzhang@SolanaLearn:anchor-litesvm-example$ anchor build
+yxzhang@SolanaLearn:anchor-litesvm-example$ anchor test
+yxzhang@SolanaLearn:anchor-litesvm-example$ touch programs/anchor-litesvm-example/tests/test_anchor_program.rs # 拷贝代码
+yxzhang@SolanaLearn:anchor-litesvm-example$ cargo add --dev solana-sdk
+# 修改lib.rs，适配test中的结构
+yxzhang@SolanaLearn:anchor-litesvm-example$ rm programs/anchor-litesvm-example/tests/test_initialize.rs 
+yxzhang@SolanaLearn:anchor-litesvm-example$ mkdir programs/anchor-litesvm-example/idls
+yxzhang@SolanaLearn:anchor-litesvm-example$ cp target/idl/anchor_litesvm_example.json programs/anchor-litesvm-example/idls/
+yxzhang@SolanaLearn:anchor-litesvm-example$ anchor test
+yxzhang@SolanaLearn:anchor-litesvm-example$ touch note
