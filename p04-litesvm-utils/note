@@ -1,0 +1,18 @@
+yxzhang@SolanaLearn:litesvm-doc$ mkdir p04-litesvm-utils
+yxzhang@SolanaLearn:litesvm-doc$ cd p04-litesvm-utils/
+yxzhang@SolanaLearn:p04-litesvm-utils$ cargo new utils-example
+yxzhang@SolanaLearn:p04-litesvm-utils$ cd utils-example/
+yxzhang@SolanaLearn:utils-example$ cargo add --dev litesvm solana-sdk litesvm-utils solana-system-interface@3.1.0
+yxzhang@SolanaLearn:utils-example$ mkdir tests
+yxzhang@SolanaLearn:utils-example$ touch tests/test_with_utils.rs # 拷贝代码
+# system_instruction -> solana_system_interface::instruction
+yxzhang@SolanaLearn:utils-example$ cargo test test_with_utils -- --show-output
+yxzhang@SolanaLearn:utils-example$ touch tests/test_complete_setup.rs # 拷贝代码
+yxzhang@SolanaLearn:utils-example$ cargo test test_complete_setup -- --show-output
+yxzhang@SolanaLearn:utils-example$ touch tests/test_comprehensive_assertions.rs # 拷贝代码
+# system_instruction -> solana_system_interface::instruction
+yxzhang@SolanaLearn:utils-example$ cargo add --dev spl-token
+yxzhang@SolanaLearn:utils-example$ touch tests/test_transaction_workflow.rs # 拷贝代码
+yxzhang@SolanaLearn:utils-example$ cargo test test_transaction_workflow -- --show-output
+yxzhang@SolanaLearn:utils-example$ cd ..
+yxzhang@SolanaLearn:p04-litesvm-utils$ touch note
