@@ -1,0 +1,16 @@
+yxzhang@SolanaLearn:litesvm-doc$ mkdir p05-litesvm-token
+yxzhang@SolanaLearn:litesvm-doc$ cd p05-litesvm-token/
+yxzhang@SolanaLearn:p05-litesvm-token$ cargo new token-example
+yxzhang@SolanaLearn:p05-litesvm-token$ cd token-example/
+yxzhang@SolanaLearn:token-example$ cargo add --dev litesvm litesvm-token solana-sdk spl-token spl-associated-token-account
+yxzhang@SolanaLearn:token-example$ mkdir tests
+yxzhang@SolanaLearn:token-example$ touch tests/test_create_and_mint_token.rs # 拷贝代码
+yxzhang@SolanaLearn:token-example$ cargo test test_create_and_mint_tokens -- --show-output
+yxzhang@SolanaLearn:token-example$ touch tests/test_create_mint.rs # 拷贝代码
+yxzhang@SolanaLearn:token-example$ cargo test test_create_mint -- --show-output
+yxzhang@SolanaLearn:token-example$ touch tests/test_mint_tokens.rs
+yxzhang@SolanaLearn:token-example$ cargo test test_mint_tokens -- --show-output
+yxzhang@SolanaLearn:token-example$ touch tests/test_token_transfer.rs
+yxzhang@SolanaLearn:token-example$ cargo test test_token_transfer -- --show-output
+yxzhang@SolanaLearn:token-example$ cd ..
+yxzhang@SolanaLearn:p05-litesvm-token$ touch note
