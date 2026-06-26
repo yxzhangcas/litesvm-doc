@@ -1,0 +1,17 @@
+yxzhang@SolanaLearn:litesvm-doc$ mkdir p08-litesvm-ts
+yxzhang@SolanaLearn:litesvm-doc$ cd p08-litesvm-ts/
+yxzhang@SolanaLearn:p08-litesvm-ts$ npm init
+yxzhang@SolanaLearn:p08-litesvm-ts$ yarn add @solana/kit @solana/kit-plugin-litesvm @solana/kit-plugin-signer @solana-program/system
+yxzhang@SolanaLearn:p08-litesvm-ts$ mkdir get-started
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch get-started/quick_start.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node get-started/get_balance.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node get-started/quick_start.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch get-started/use_svm.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node get-started/use_svm.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch get-started/use_rpc.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node get-started/use_rpc.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch get-started/send_transaction.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node get-started/send_transaction.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch get-started/svm_rpc.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node get-started/svm_rpc.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch get-started/note
