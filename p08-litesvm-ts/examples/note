@@ -1,0 +1,19 @@
+# https://www.litesvm.com/docs/typescript/examples
+yxzhang@SolanaLearn:p08-litesvm-ts$ mkdir examples
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/sol_transfer.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/sol_transfer.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/account_setup.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/account_setup.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/accounts_setup.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/accounts_setup.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/program_data_account_setup.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/program_data_account_setup.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/basic_clock_manipulation.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/basic_clock_manipulation.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/time_lock.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/time_lock.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/epoch_schedule.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/epoch_schedule.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/manual_clock_manipulation.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node examples/manual_clock_manipulation.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch examples/note
