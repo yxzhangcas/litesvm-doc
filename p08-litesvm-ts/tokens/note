@@ -1,0 +1,12 @@
+# https://www.litesvm.com/docs/typescript/tokens
+yxzhang@SolanaLearn:p08-litesvm-ts$ yarn add @solana/kit @solana/kit-plugin-litesvm @solana/kit-plugin-signer @solana-program/token
+yxzhang@SolanaLearn:p08-litesvm-ts$ mkdir tokens
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch tokens/create_mint.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node tokens/create_mint.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch tokens/mint_token.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node tokens/mint_token.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch tokens/transfer_token.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node tokens/transfer_token.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch tokens/verify_balance.ts
+yxzhang@SolanaLearn:p08-litesvm-ts$ ts-node tokens/verify_balance.ts 
+yxzhang@SolanaLearn:p08-litesvm-ts$ touch tokens/note
